@@ -174,6 +174,9 @@ _io_r0_2 = [
         Subsignal("data", Pins("J1 K3 L3 M1"), Misc("PULLMODE=UP")),
         IOStandard("LVCMOS33"), Misc("SLEWRATE=FAST")
     ),
+
+    # Switches
+    ("user_sw", 0, Pins("A8"), IOStandard("LVCMOS33")), # GPIO:11
 ]
 
 # Connectors ---------------------------------------------------------------------------------------
@@ -210,7 +213,8 @@ feather_spi = [
     ("spi", 0,
         Subsignal("miso", Pins("GPIO:14"), IOStandard("LVCMOS33")),
         Subsignal("mosi", Pins("GPIO:16"), IOStandard("LVCMOS33")),
-        Subsignal("clk",  Pins("GPIO:15"), IOStandard("LVCMOS33"))
+        Subsignal("clk",  Pins("GPIO:15"), IOStandard("LVCMOS33")),
+        Subsignal("cs_n", Pins("GPIO:10"), IOStandard("LVCMOS33"))
     )
 ]
 
